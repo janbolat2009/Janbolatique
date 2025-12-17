@@ -130,7 +130,8 @@ section.in-view {
     align-items: center;
     justify-content: center;
     position: relative;
-    
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .hero-bg {
@@ -663,4 +664,5 @@ footer {
     .skills-grid, .projects-grid {
         grid-template-columns: 1fr;
     }
+
 }
