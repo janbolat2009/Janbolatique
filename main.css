@@ -412,21 +412,6 @@ section.in-view {
     position: relative;
 }
 
-.timeline-item.highlight .timeline-content::before {
-    content: '★';
-    position: absolute;
-    left: -40px;
-    top: 0;
-    font-size: 1.5rem;
-    color: #8A9A5B;
-    animation: glow 2s infinite alternate;
-}
-
-@keyframes glow {
-    from { text-shadow: 0 0 10px rgba(138, 154, 91, 0.5); }
-    to { text-shadow: 0 0 20px rgba(138, 154, 91, 0.8); }
-}
-
 .year {
     color: #999;
     font-size: 0.9rem;
@@ -703,5 +688,6 @@ footer {
     }
 
 }
+
 
 
