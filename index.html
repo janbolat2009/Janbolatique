@@ -18,6 +18,7 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#sports">Sports</a></li>
                 <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#programs">Programs</a></li>
                 <li><a href="#club">Club</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#freelance">Freelance</a></li>
@@ -56,7 +57,7 @@
                     <p>My mission is to bridge design, artificial intelligence, and business to create innovative solutions that make a difference.</p>
                 </div>
                 <div class="about-image-placeholder">
-                        <img src="./img/my-photo.jpg" alt="">
+                    <img src="./img/my-photo.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -65,12 +66,21 @@
     <section id="education">
         <div class="container">
             <h2 class="section-title">Education</h2>
-            <div class="education-card">
-                <div class="card-icon">🎓</div>
-                <h3>Nazarbayev Intellectual School</h3>
-                <p>Physics and Mathematics Direction, Astana</p>
-                <div class="gpa-badge">GPA 5.0 <span>(4.0 American)</span></div>
-                <p class="grade-info">10th Grade • Current Student</p>
+            <div class="education-cards-wrap">
+                <div class="education-card">
+                    <div class="card-icon">🎓</div>
+                    <h3>Nazarbayev Intellectual School</h3>
+                    <p>Physics and Mathematics Direction, Astana</p>
+                    <div class="gpa-badge">GPA 5.0 <span>(4.0 American)</span></div>
+                    <p class="grade-info">10th Grade • Current Student</p>
+                </div>
+                <div class="education-card exchange-card">
+                    <div class="card-icon">🌍</div>
+                    <h3>International School of Hanover Region</h3>
+                    <p>Exchange Program • Hannover, Germany</p>
+                    <div class="exchange-badge">Completed April 2026</div>
+                    <p class="grade-info">International Exchange • ISHR</p>
+                </div>
             </div>
         </div>
     </section>
@@ -153,14 +163,77 @@
                     </div>
                 </div>
                 <div class="timeline-item highlight">
-    <div class="timeline-dot"></div>
-    <div class="timeline-content">
-        <h3>Örken Grant Recipient</h3>
-        <p>Awarded the prestigious Örken grant for studies at Nazarbayev Intellectual School (NIS)</p>
-        <p>Ranked 30th out of 1200 candidates in the national competition</p>
-        <span class="year">National Competition</span>
-    </div>
-</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Örken Grant Recipient</h3>
+                        <p>Awarded the prestigious Örken grant for studies at Nazarbayev Intellectual School (NIS)</p>
+                        <p>Ranked 30th out of 1200 candidates in the national competition</p>
+                        <span class="year">National Competition</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="programs">
+        <div class="container">
+            <h2 class="section-title">Global Programs & Candidacies</h2>
+            <p class="programs-intro">Selected as a candidate for some of the world's most prestigious youth entrepreneurship and innovation programs.</p>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-logo-wrap">
+                        <div class="program-img-placeholder">
+                            <img src="" alt="LaunchX" class="program-img">
+                        </div>
+                    </div>
+                    <div class="program-info">
+                        <div class="program-badge candidate">Candidate</div>
+                        <h3>LaunchX</h3>
+                        <p class="program-subtitle">Summer Flagship Entrepreneurship Program</p>
+                        <p class="program-desc">One of the most selective entrepreneurship programs for high schoolers worldwide, where students launch real startups.</p>
+                        <div class="program-tags">
+                            <span>Entrepreneurship</span>
+                            <span>Startup</span>
+                            <span>USA</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-logo-wrap">
+                        <div class="program-img-placeholder">
+                            <img src="" alt="Inspirit AI" class="program-img">
+                        </div>
+                    </div>
+                    <div class="program-info">
+                        <div class="program-badge candidate">Candidate</div>
+                        <h3>Inspirit AI</h3>
+                        <p class="program-subtitle">AI Scholars Program</p>
+                        <p class="program-desc">A Stanford & MIT-led program empowering high school students to master artificial intelligence through hands-on projects.</p>
+                        <div class="program-tags">
+                            <span>Artificial Intelligence</span>
+                            <span>Stanford</span>
+                            <span>MIT</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-logo-wrap">
+                        <div class="program-img-placeholder">
+                            <img src="" alt="TKS" class="program-img">
+                        </div>
+                    </div>
+                    <div class="program-info">
+                        <div class="program-badge candidate">Candidate '26/27</div>
+                        <h3>TKS</h3>
+                        <p class="program-subtitle">The Knowledge Society</p>
+                        <p class="program-desc">An intensive program for ambitious teenagers to develop the mindset and skills needed to solve the world's biggest challenges.</p>
+                        <div class="program-tags">
+                            <span>Innovation</span>
+                            <span>Deep Tech</span>
+                            <span>2026/27</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -299,7 +372,6 @@
     const navLinks = document.querySelector('.nav-links');
     const links = document.querySelectorAll('.nav-links a');
 
-    
     burger.addEventListener('click', () => {
         navLinks.classList.toggle('nav-active');
         burger.classList.toggle('toggle');
@@ -320,9 +392,6 @@
             }
         });
     });
-</script>
+    </script>
 </body>
-
 </html>
-
-
