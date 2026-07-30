@@ -267,6 +267,66 @@ section.in-view {
     color: #999;
     font-size: 0.95rem;
 }
+.exams-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.8rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.exam-card {
+    background: white;
+    padding: 2.2rem 1.8rem;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(138, 154, 91, 0.1);
+    transition: all 0.4s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+.exam-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(138, 154, 91, 0.2);
+}
+.exam-subject {
+    font-weight: 600;
+    color: #4a4a4a;
+    font-size: 1.05rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+.exam-lang {
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+.exam-score {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    color: #8A9A5B;
+    font-weight: 700;
+}
+.exam-score span {
+    font-size: 1.1rem;
+    color: #b5b5b5;
+    font-weight: 400;
+}
+.exam-grade {
+    background: linear-gradient(45deg, #8A9A5B, #a3b87a);
+    color: white;
+    padding: 0.5rem 1.4rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+.exam-grade-star {
+    background: linear-gradient(45deg, #c9a13b, #e8c766);
+}
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -511,10 +571,16 @@ section.in-view {
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(138, 154, 91, 0.1);
     transition: all 0.4s;
+    display: flex;
+    flex-direction: column;
 }
 .project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(138, 154, 91, 0.2);
+}
+.project-card-featured {
+    border: 2px solid rgba(138, 154, 91, 0.25);
+    position: relative;
 }
 .project-icon {
     font-size: 3rem;
@@ -532,6 +598,21 @@ section.in-view {
     padding: 0.4rem 1rem;
     border-radius: 50px;
     font-size: 0.9rem;
+}
+.project-link {
+    margin-top: 1.5rem;
+    display: inline-block;
+    align-self: flex-start;
+    color: #8A9A5B;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid #8A9A5B;
+    padding-bottom: 2px;
+    transition: all 0.3s;
+}
+.project-link:hover {
+    color: #5f6d3f;
+    border-color: #5f6d3f;
 }
 .freelance-content {
     text-align: center;
