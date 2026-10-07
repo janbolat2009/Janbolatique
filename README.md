@@ -1,2 +1,20 @@
-# Janbolatique
-Personal Website about me
+# Janbolat Portfolio
+
+This is a static, single-page site with a small Vercel function for optional runtime settings.
+
+## Edit portfolio content
+
+Update `config.js` for personal details, availability, social links, projects, achievements, events, skills, and meeting types. Project roles and statuses are optional; leave them unset until the details are ready to publish.
+
+## Configure Vercel integrations
+
+In the Vercel project settings, add either of these environment variables and redeploy:
+
+- `BOOKING_URL` — Calendly, Cal.com, or another scheduling page. The booking dialog will pass the selected meeting and duration to it.
+- `CONTACT_ENDPOINT` — a form endpoint that accepts a JSON `POST` with name, email, company, reason, and message. Without it, the form opens a prefilled email draft.
+
+The two values are read by `api/portfolio-config.js` at runtime. They are public URLs, not secret credentials.
+
+## Preview locally
+
+From the project folder, run `python -m http.server 4173` and open `http://127.0.0.1:4173/`.
