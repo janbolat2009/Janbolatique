@@ -79,11 +79,18 @@
     $(".project-info p", card).textContent = project.description;
     const tags = $(".project-tags", card);
     tags.replaceChildren(...project.tags.map(tag => createElement("span", "", tag)));
-    const website = $(".project-site", card);
-    if (website) {
-      if (project.website) website.href = project.website;
-      else website.remove();
-    }
+    let website = $(".project-site", card);
+    if (project.website) {
+      if (!website) {
+        website = createElement("a", "project-site", undefined, $(".project-info", card));
+        website.append(document.createTextNode("Visit website "));
+        createElement("span", "", "↗", website);
+      }
+      website.href = project.website;
+      website.target = "_blank";
+      website.rel = "noopener noreferrer";
+      website.setAttribute("aria-label", `Visit ${project.title} website`);
+    } else if (website) website.remove();
   });
   $$(".contact-links a").forEach(link => {
     if (link.textContent.includes("LinkedIn")) link.href = config.linkedin;
@@ -202,16 +209,22 @@
     if (!meeting) return;
     bookingChoice.textContent = `${meeting.title} · ${meeting.duration} minutes · ${zone}`;
     bookingNext.hidden = false;
-    if (config.bookingUrl) {
+    const bookingUrl = meeting.bookingUrl || config.bookingUrl;
+    if (bookingUrl) {
       bookingFoot.textContent = "Available times and confirmation are provided by the calendar service.";
-      const url = new URL(config.bookingUrl, window.location.href);
-      url.searchParams.set("duration", String(meeting.duration));
-      url.searchParams.set("meeting", meeting.title);
+      const url = new URL(bookingUrl, window.location.href);
+      const isGoogleAppointmentPage = /(^|\.)calendar\.google\.com$/.test(url.hostname) || /(^|\.)calendar\.app\.google$/.test(url.hostname);
+      if (!isGoogleAppointmentPage) {
+        url.searchParams.set("duration", String(meeting.duration));
+        url.searchParams.set("meeting", meeting.title);
+      }
       bookingContinue.href = url.toString();
       bookingContinue.target = "_blank";
       bookingContinue.rel = "noreferrer";
       bookingContinue.innerHTML = 'Continue to scheduling <span aria-hidden="true">↗</span>';
-      bookingNote.textContent = "Choose an available time on the scheduling page. The provider will send the confirmation.";
+      bookingNote.textContent = isGoogleAppointmentPage
+        ? "Choose an available time on Google Calendar’s booking page. Google will add the meeting to the calendar and send a confirmation."
+        : "Choose an available time on the scheduling page. The provider will send the confirmation.";
     } else {
       bookingFoot.textContent = "No calendar is connected yet. Select a meeting type to prepare an email request.";
       const subject = encodeURIComponent(`Meeting request: ${meeting.title}`);

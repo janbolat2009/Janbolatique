@@ -33,7 +33,7 @@ window.PORTFOLIO_CONFIG = {
     synapsense: { title: "SynapSense", description: "AI brain detection platform paired with a wearable device for real-time neural signal monitoring and analysis.", tags: ["AI", "Neurotech", "Wearable device"] },
     tripai: { title: "TripAI", description: "AI-powered platform for automated tour planning and booking.", tags: ["AI", "Automation", "Travel tech"] },
     jobsy: { title: "JOBSY AI", description: "Intelligent recruitment platform automating the employee hiring process.", tags: ["AI", "HR tech", "Automation"] },
-    "nis-kitap": { title: "NIS Kitap", description: "Digital library containing textbooks and resources for school.", tags: ["Education", "Web development", "Digitalization"] }
+    "nis-kitap": { title: "NIS Kitap", description: "Digital library containing textbooks and resources for school.", tags: ["Education", "Web development", "Digitalization"], website: "https://nis-kitap.vercel.app/" }
   },
   meetings: {
     quick: { title: "15 min Quick Chat", duration: 15 },
