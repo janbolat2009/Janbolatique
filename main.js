@@ -207,13 +207,14 @@
     if (!chosenMeeting) return;
     const meeting = config.meetings?.[chosenMeeting];
     if (!meeting) return;
-    bookingChoice.textContent = `${meeting.title} · ${meeting.duration} minutes · ${zone}`;
-    bookingNext.hidden = false;
     const bookingUrl = meeting.bookingUrl || config.bookingUrl;
+    const bookingHostname = bookingUrl ? new URL(bookingUrl, window.location.href).hostname : "";
+    const isGoogleAppointmentPage = /(^|\.)calendar\.google\.com$/.test(bookingHostname) || /(^|\.)calendar\.app\.google$/.test(bookingHostname);
+    bookingChoice.textContent = `${meeting.title}${isGoogleAppointmentPage ? "" : ` · ${meeting.duration} minutes`} · ${zone}`;
+    bookingNext.hidden = false;
     if (bookingUrl) {
       bookingFoot.textContent = "Available times and confirmation are provided by the calendar service.";
       const url = new URL(bookingUrl, window.location.href);
-      const isGoogleAppointmentPage = /(^|\.)calendar\.google\.com$/.test(url.hostname) || /(^|\.)calendar\.app\.google$/.test(url.hostname);
       if (!isGoogleAppointmentPage) {
         url.searchParams.set("duration", String(meeting.duration));
         url.searchParams.set("meeting", meeting.title);

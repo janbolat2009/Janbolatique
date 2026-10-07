@@ -9,7 +9,7 @@ window.PORTFOLIO_CONFIG = {
   location: "Astana, Kazakhstan",
   focus: "Design × AI × business",
   availability: "Open to collaborations",
-  bookingUrl: "",
+  bookingUrl: "https://calendar.app.google/PDk3CGX4kHZ6UAEU9",
   contactEndpoint: "",
   linkedin: "https://linkedin.com/in/janbolat-daribek-6929b6320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
   instagram: "https://www.instagram.com/janbolatique?igsh=YWY2ZHczcWZibWt4&utm_source=qr",
