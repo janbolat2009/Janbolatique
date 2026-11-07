@@ -106,7 +106,9 @@
   if (config.focus) $(".focus-copy").textContent = config.focus;
   if (config.name) {
     const copyright = $(".footer-copyright");
-    copyright.replaceChildren(document.createTextNode("© "), createElement("span", "", new Date().getFullYear()), document.createTextNode(` ${config.name}`));
+    const year = createElement("span", "", new Date().getFullYear());
+    year.id = "year";
+    copyright.replaceChildren(document.createTextNode("© "), year, document.createTextNode(` ${config.name}`));
   }
 
   // Theme preference: saved choice first, then the operating system setting.
